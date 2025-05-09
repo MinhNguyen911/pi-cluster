@@ -31,16 +31,8 @@ spec:
       ingress:
         enabled: true
         ingressClassName: traefik
-        annotations:
-          # Optional: Add annotations for Cloudflare or other requirements
-          cloudflare.com/tunnel: ldpi
         path: /
         pathType: Prefix
         hosts:
           - grafana.philipnguyen.uk
-      grafana.ini:
-        server:
-          root_url: https://grafana.philipnguyen.uk
-          domain: grafana.philipnguyen.uk
-          serve_from_sub_path: false
 
