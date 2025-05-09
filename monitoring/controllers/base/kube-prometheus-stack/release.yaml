@@ -37,9 +37,6 @@ spec:
         pathType: Prefix
         hosts:
           - grafana.philipnguyen.uk
-        tls:
-            hosts:
-              - grafana.philipnguyen.uk
       grafana.ini:
         server:
           root_url: https://grafana.philipnguyen.uk
