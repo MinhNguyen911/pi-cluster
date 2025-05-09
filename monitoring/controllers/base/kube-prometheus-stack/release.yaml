@@ -30,6 +30,9 @@ spec:
       adminPassword: jblunt195
       ingress:
         enabled: true
+        annotations:
+          # Optional: Add annotations for Cloudflare or other requirements
+          cloudflare.com/tunnel: ldpi
         path: /
         pathType: Prefix
         hosts:
