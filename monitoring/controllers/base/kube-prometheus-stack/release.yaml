@@ -35,7 +35,7 @@ spec:
         pathType: Prefix
         hosts:
           - grafana.philipnguyen.uk
-        tlse:
+        tls:
           - secretName: grafana-tls-secret
             hosts: grafana.philipnguyen.uk
 
