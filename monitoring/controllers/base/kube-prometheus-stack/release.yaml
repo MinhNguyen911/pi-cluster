@@ -35,5 +35,6 @@ spec:
           - grafana.philipnguyen.uk
         tls:
           - secretName: grafana-tls-secret
-            hosts: grafana.philipnguyen.uk
+            hosts:
+              - grafana.philipnguyen.uk
 
