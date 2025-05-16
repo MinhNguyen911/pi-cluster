@@ -22,3 +22,25 @@ spec:
             - configMapRef:
                 name: audiobookshelf-configmap
       restartPolicy: Always # This is the default value anyways
+          volumeMounts:
+            - name: audiobookshelf-config
+              mountPath: /config
+            - name: audiobookshelf-metadata
+              mountPath: /metadata
+            - name: audiobookshelf-audiobooks
+              mountPath: /audiobooks
+            - name: audiobookshelf-podcasts
+              mountPath: /podcasts
+      volumes:
+        - name: audiobookshelf-config
+          persistentVolumeClaim:
+            claimName: audiobookshelf-config
+        - name: audiobookshelf-metadata
+          persistentVolumeClaim:
+            claimName: audiobookshelf-metadata
+        - name: audiobookshelf-audiobooks
+          persistentVolumeClaim:
+            claimName: audiobookshelf-audiobooks
+        - name: audiobookshelf-podcasts
+          persistentVolumeClaim:
+            claimName: audiobookshelf-podcasts
