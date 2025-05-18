@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: monitoring
 resources:
   - linkding
-  # - audiobookshelf
+  - audiobookshelf
