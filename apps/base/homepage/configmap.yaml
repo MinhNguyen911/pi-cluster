@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: homepage
 data:
-  #settings.yaml: ""
+  settings.yaml: ""
   docker.yaml: ""
   kubernetes.yaml: ""
   custom.css: ""
