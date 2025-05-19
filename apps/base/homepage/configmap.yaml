@@ -53,6 +53,9 @@ data:
             description: Monitoring Dashboard
 
   widgets.yaml: |
+    - greeting:
+        text_size: 2x1
+        text: Welcome to Philip's Server
     - search:
         provider: [brave, google]
         showSearchSuggestions: true
