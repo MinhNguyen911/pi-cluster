@@ -6,6 +6,8 @@ metadata:
     app.kubernetes.io/name: homepage
 data:
   #settings.yaml: ""
+  docker.yaml: ""
+  kubernetes.yaml: ""
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
