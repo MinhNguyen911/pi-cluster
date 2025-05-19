@@ -27,7 +27,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
-              value: "*"
+              value: "homepage.philipnguyen.uk"
           ports:
             - name: http
               containerPort: 3000
