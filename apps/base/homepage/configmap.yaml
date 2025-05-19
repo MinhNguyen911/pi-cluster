@@ -5,7 +5,14 @@ metadata:
   labels:
     app.kubernetes.io/name: homepage
 data:
-  settings.yaml: ""
+  settings.yaml: |
+    title: Philip Homepage
+    background: 
+      image: https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg 
+    #  blur:  sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+    #  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+    #  brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+      opacity: 30 # 0-100
   docker.yaml: ""
   kubernetes.yaml: ""
   custom.css: ""
