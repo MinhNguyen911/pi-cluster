@@ -41,7 +41,7 @@ data:
 
   widgets.yaml: |
     - search:
-        provider: [brave, google, duckduckgo]
+        provider: google
         showSearchSuggestions: true
         target: _blank
     - datetime:
