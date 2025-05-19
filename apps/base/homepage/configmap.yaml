@@ -52,3 +52,13 @@ data:
         format:
           timeStyle: long
           dateStyle: long
+    - resources:
+        label: System Resources
+        expanded: true
+        cpu: true
+        memory: true
+        uptime: true
+        refresh: 1000
+        disk:
+          - /
+
