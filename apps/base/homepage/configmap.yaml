@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  settings.yaml: ""
+  custom.css: ""
+  custom.js: ""
+  bookmarks.yaml: |
+    - Developer:
+        - Github:
+            - abbr: GH
+              href: https://github.com/MinhNguyen911
+              description: My Github account page
+    - Social Media:
+        - X:
+            - abbr: X
+              icon: twitter.svg
+              href: https://x.com
+        - Reddit:
+            - abbr: X
+              icon: reddit.svg
+              href: https://reddit.com
+    - Entertainment:
+        - Youtube:
+            - abbr: YT
+              icon: youtube.svg
+              href: https://youtube.com
+  services.yaml: |
+    - Homelab:
+        - Audiobookshelf:
+            href: https://audiobookshelf.philipnguyen.uk
+            icon: audiobookshelf.svg
+            description: Audiobooks and podcasts
+        - Linkding:
+            href: https://audiobookshelf.philipnguyen.uk
+            icon: linkding.svg
+            description: Interesting/important bookmarks
+
+  widgets.yaml: |
+    - search:
+        provider: [brave, google, duckduckgo]
+        showSearchSuggestions: true
+        target: _blank
+    - datetime:
+        text_size: xl
+        locale: en
+        format:
+          timeStyle: long
+          dateStyle: long
