@@ -40,10 +40,14 @@ data:
             href: https://audiobookshelf.philipnguyen.uk
             icon: linkding.svg
             description: Interesting/important bookmarks
+        - Grafana:
+            href: https://grafana.philipnguyen.uk
+            icon: grafana.svg
+            description: Monitoring Dashboard
 
   widgets.yaml: |
     - search:
-        provider: google
+        provider: [brave, google]
         showSearchSuggestions: true
         target: _blank
     - datetime:
