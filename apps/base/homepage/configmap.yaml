@@ -22,6 +22,7 @@ data:
         - Github:
             - abbr: GH
               href: https://github.com/MinhNguyen911
+              icon: github.svg
               description: My Github account page
     - Social Media:
         - X:
