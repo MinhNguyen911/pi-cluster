@@ -7,3 +7,4 @@ data:
   DB_DATA_LOCATION: /var/lib/postgresql/data
   DB_USERNAME: postgres
   DB_DATABASE_NAME: immich
+  IMMICH_PORT: "2283"
