@@ -6,5 +6,5 @@ spec:
   ports:
     - port: 2283
   selector:
-    app: immich
+    app: immich-server
   type: ClusterIP
