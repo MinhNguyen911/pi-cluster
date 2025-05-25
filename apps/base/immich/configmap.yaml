@@ -1,6 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: audiobookshelf-configmap
+  name: immich-config
+  namespace: immich
 data:
-  PORT: "3005"
+  UPLOAD_LOCATION: /usr/src/app/upload
+  DB_DATA_LOCATION: /var/lib/postgresql/data
+  DB_USERNAME: postgres
+  DB_DATABASE_NAME: immich
