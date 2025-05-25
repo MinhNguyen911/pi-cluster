@@ -44,6 +44,10 @@ data:
             href: https://audiobookshelf.philipnguyen.uk
             icon: audiobookshelf.svg
             description: Audiobooks and podcasts
+        - Immich:
+            href: https://immich.philipnguyen.uk
+            icon: immich.svg
+            description: Photos and videos
         - Linkding:
             href: https://audiobookshelf.philipnguyen.uk
             icon: linkding.svg
