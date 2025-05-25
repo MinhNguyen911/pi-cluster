@@ -9,3 +9,4 @@ data:
   DB_DATABASE_NAME: immich
   IMMICH_PORT: "2283"
   REDIS_HOSTNAME: "immich-redis"
+  DB_HOSTNAME: "immich-postgres"
