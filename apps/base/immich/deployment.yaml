@@ -94,7 +94,7 @@ spec:
       volumes:
       - name: model-cache
         persistentVolumeClaim:
-          claimName: immich-data-pvc  # Using same PVC; adjust if needed
+          claimName: immich-data-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -112,4 +112,4 @@ spec:
     spec:
       containers:
       - name: redis
-        image: docker.io/valkey/valkey:8-bookworm@sha256:ff21bc0f8194dc9c105b769aeabf9585fea6a8ed649c0781caeac5cb3c247884  # Fixed tag as per docker-compose.yml
+        image: docker.io/valkey/valkey:8-bookworm@sha256:ff21bc0f8194dc9c105b769aeabf9585fea6a8ed649c0781caeac5cb3c247884
