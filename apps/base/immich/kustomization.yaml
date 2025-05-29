@@ -9,3 +9,4 @@ resources:
   - secret.yaml
   - immich-redis-service.yaml
   - immich-postgres-service.yaml
+  - immich-machine-learning.yaml
