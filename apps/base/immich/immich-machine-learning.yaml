@@ -6,5 +6,5 @@ spec:
   selector:
     app: immich-machine-learning
   ports:
-  - port: 3001
+  - port: 3003
   type: ClusterIP
