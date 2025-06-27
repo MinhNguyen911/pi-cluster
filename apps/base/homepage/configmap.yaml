@@ -49,7 +49,7 @@ data:
             icon: immich.svg
             description: Photos and videos
         - Linkding:
-            href: https://audiobookshelf.philipnguyen.uk
+            href: https://linkding.philipnguyen.uk
             icon: linkding.svg
             description: Interesting/important bookmarks
         - Grafana:
