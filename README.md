@@ -36,7 +36,7 @@ This repository uses **Flux CD v2** to manage a Kubernetes cluster following Git
 ### External Access
 Services are securely exposed via **Cloudflare Tunnels** without opening firewall ports:
 - `audiobookshelf.philipnguyen.uk` - Audiobook server
-- `grafana.philipnguyen.uk` - Monitoring dashboard
+- `grafana.philipnguyen.uk` - Monitoring dashboard **(only accessible on my local network)**
 - Additional services configured per environment
 
 ### Internal Networking
