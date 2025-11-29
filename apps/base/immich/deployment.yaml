@@ -83,6 +83,7 @@ spec:
       containers:
       - name: immich-machine-learning
         image: ghcr.io/immich-app/immich-machine-learning:release
+        imagePullPolicy: Always
         env:
         - name: IMMICH_PORT
           value: "3003"
