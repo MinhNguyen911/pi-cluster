@@ -3,3 +3,37 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+patches:
+# Slow down leader-election lease renewals.
+#
+# Measured 2026-07-26: the k3s/kine datastore takes ~118,000 revisions/day, and
+# ~33% of that is these four controllers renewing leader-election leases. Each
+# renewal is a write to kine. Compaction cost scales with table size, and when
+# compaction latches it does so silently and does not recover (it took flux down
+# from 2026-04-07 to 2026-07-26).
+#
+# This cluster is single-node with replicas=1 per controller, so leader election
+# has no other candidate. It is kept (not disabled) because 3 of the 4 controllers
+# use RollingUpdate, which can briefly run 2 pods during an upgrade -- leader
+# election is what prevents both reconciling at once.
+#
+# Upstream defaults: lease-duration 35s, renew-deadline 30s, retry-period 5s.
+# Constraint: retry-period < renew-deadline < lease-duration.
+#
+# Cost: after an UNGRACEFUL pod crash the replacement waits up to lease-duration
+# (300s) to acquire leadership. Graceful restarts release the lease immediately
+# (--leader-election-release-on-cancel defaults to true), so this is rare.
+- target:
+    kind: Deployment
+    namespace: flux-system
+    name: "(kustomize-controller|source-controller|helm-controller|notification-controller)"
+  patch: |
+    - op: add
+      path: /spec/template/spec/containers/0/args/-
+      value: --leader-election-lease-duration=300s
+    - op: add
+      path: /spec/template/spec/containers/0/args/-
+      value: --leader-election-renew-deadline=270s
+    - op: add
+      path: /spec/template/spec/containers/0/args/-
+      value: --leader-election-retry-period=60s
