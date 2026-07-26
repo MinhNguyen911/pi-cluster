@@ -6,13 +6,28 @@ metadata:
 spec:
   schedule: "@hourly"
   concurrencyPolicy: Forbid
+  # Keep at most one old Job of each kind. Without these, failed Jobs linger
+  # indefinitely (one from 2026-07-17 was still holding 7 Error pods 9 days on).
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
   jobTemplate:
     spec:
+      # Reap finished Jobs (and their pods) an hour after they complete.
+      ttlSecondsAfterFinished: 3600
       template:
         spec:
           containers:
             - name: renovate
               image: renovate/renovate:latest
+              # A ":latest" tag makes Kubernetes default imagePullPolicy to
+              # Always, so this hourly job re-pulled a ~443MB image every hour.
+              # Each new upstream digest was unpacked into its own overlayfs
+              # snapshot and kept: 765 dangling renovate images / ~483GB /
+              # 33M inodes by 2026-07-26. IfNotPresent stops that.
+              # NOTE: this pins behaviour, not version -- the image is now only
+              # re-pulled when absent. Prefer replacing ":latest" with an
+              # explicit version tag, which Renovate can then bump by PR.
+              imagePullPolicy: IfNotPresent
               args:
                 - MinhNguyen911/pi-cluster
 
