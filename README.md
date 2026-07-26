@@ -23,7 +23,7 @@ This repository uses **Flux CD v2** to manage a Kubernetes cluster following Git
 
 ### Self-Hosted Services
 - **[Audiobookshelf](https://www.audiobookshelf.org/)** (v2.25.1) - Audiobook and podcast server
-- **[Immich](https://immich.app/)** (v1.134.0) - Photo management and backup solution
+- **[Immich](https://immich.app/)** (v3.0.3) - Photo management and backup solution
 - **[Homepage](https://gethomepage.dev/)** (v1.3.2) - Customizable dashboard for your services
 - **[Linkding](https://github.com/sissbruecker/linkding)** - Bookmark manager
 
