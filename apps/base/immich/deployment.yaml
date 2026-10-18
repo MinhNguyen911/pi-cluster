@@ -4,6 +4,8 @@ metadata:
   name: immich-server
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: immich-server
@@ -14,7 +16,7 @@ spec:
     spec:
       containers:
       - name: immich-server
-        image: ghcr.io/immich-app/immich-server:v3.0.3
+        image: ghcr.io/immich-app/immich-server:v3.3.3
         ports:
         - containerPort: 2283
         volumeMounts:
@@ -82,7 +84,7 @@ spec:
     spec:
       containers:
       - name: immich-machine-learning
-        image: ghcr.io/immich-app/immich-machine-learning:v3.0.3
+        image: ghcr.io/immich-app/immich-machine-learning:v3.3.3
         env:
         - name: IMMICH_PORT
           value: "3003"
@@ -115,4 +117,4 @@ spec:
     spec:
       containers:
       - name: redis
-        image: docker.io/valkey/valkey:9@sha256:4963247afc4cd33c7d3b2d2816b9f7f8eeebab148d29056c2ca4d7cbc966f2d9
+        image: docker.io/valkey/valkey:9@sha256:c123e3715db63d06d4ad6964884037aa0d5d4d703939b9929954112889708e1d
